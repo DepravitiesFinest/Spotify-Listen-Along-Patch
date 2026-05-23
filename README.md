@@ -7,7 +7,7 @@
 
 ## What it does
 
-Discord locks the Listen Along feature behind Nitro. This plugin patches Discord's internal Spotify device store at runtime to spoof a premium flag, tricking Discord into thinking your account is eligible without touching your account, your token, or anything server-side.
+Discord locks the Listen Along feature behind Premium. This plugin patches Discord's internal Spotify device store at runtime to spoof a premium flag, tricking Discord into thinking your account is eligible without touching your account, your token, or anything server-side.
 
 ---
 
