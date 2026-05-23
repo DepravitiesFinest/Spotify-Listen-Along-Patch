@@ -34,19 +34,19 @@ Discord locks the Listen Along feature behind Nitro. This plugin patches Discord
 ---
 
 ## What changed from the original (Old → New)
-
+ 
 The original plugin by ordinall broke because it depended on **ZeresPluginLibrary** and used the old `WebpackModules` API both of which are either broken or completely unnecessary in modern BetterDiscord.
-
-|               | Original |                            | This version |
-|---|---|---|
-| Library dependency | Requires ZeresPluginLibrary | None uses native BdApi |
-| Webpack access | `WebpackModules.getByProps(...)` | `BdApi.Webpack.getByKeys(...)` |
-| Patching | `Patcher.after(store, method, fn)` | `BdApi.Patcher.after(name, store, method, fn)` |
-| Cleanup | `Patcher.unpatchAll()` | `BdApi.Patcher.unpatchAll(pluginName)` |
-| Toasts | `BdApi.showToast(...)` | `BdApi.UI.showToast(...)` |
-
+ 
+|                    | Original                           | This version                                   |
+|--------------------|------------------------------------|------------------------------------------------|
+| Library dependency | Requires ZeresPluginLibrary        | None — uses native BdApi                       |
+| Webpack access     | `WebpackModules.getByProps(...)`   | `BdApi.Webpack.getByKeys(...)`                 |
+| Patching           | `Patcher.after(store, method, fn)` | `BdApi.Patcher.after(name, store, method, fn)` |
+| Cleanup            | `Patcher.unpatchAll()`             | `BdApi.Patcher.unpatchAll(pluginName)`         |
+| Toasts             | `BdApi.showToast(...)`             | `BdApi.UI.showToast(...)`                      |
+ 
 The core patch logic is **identical** — `getActiveSocketAndDevice` is still patched to set `isPremium = true` on the socket object. Only the surrounding infrastructure was updated to use BetterDiscord's modern built-in APIs so that it works again.
-
+ 
 ---
 
 ## Troubleshooting
