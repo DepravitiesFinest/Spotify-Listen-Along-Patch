@@ -1,6 +1,6 @@
 # SpotifyListenAlong
 
-> A modernized BetterDiscord plugin that enables Spotify **Listen Along** without Discord Nitro.  
+> A modernized BetterDiscord plugin that enables Spotify **Listen Along** without Premium.  
 > Maintained by **[Nyxthal](https://github.com/DepravitiesFinest)** — updated from the original by ordinall.
 
 ---
